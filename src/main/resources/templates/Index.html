@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="htpps://www.thymeleaf.org">
+<head>
+    <title>Expenses Tracker</title>
+    <link rel="icon" th:href="@{/images/ExpensesTrackerfavicon.ico}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+        <div style="height: 68px; width: auto; background-color: rgb(201, 100, 169); font-size: 30px; padding-top: 25px;">
+            <img th:src="@{/images/expensetracker.jpg}" alt="img" style="height: 40px; width: 40px; padding-left: 20px;">
+            <strong style="padding-left: 30px;">Spring Expenses Tracker</strong>
+            <a th:href="@{/expense/login}">
+            <i class="fas fa-user-circle" style="padding-left: 1000px; cursor: pointer; border-bottom: 2px;"></i>
+            </a>
+        </div>
+
+        <div style="height: 520px;width: auto;">
+            <div style="display: flex; padding-top: 100px; width: 1200px;">
+                <img th:src="@{/images/expensetracker1.jpg}" alt="img" style="padding-left: 150px; height: 300px;width: 300px;">
+                <div style="padding-left: 400px;">
+                    <p style="font-size: 20px;">
+                        <em>
+                            Expenses Tracker Simplify your personal reimbursement management. <br><br>Expenses 
+                            Tracker is used by user's to record their daily routine expenses 
+                            in a digital and hassle-free every as opposed to the conventional 
+                            manual documentation of expenses.
+                        </em>
+                    </p>
+                </div>
+            </div> 
+        </div>
+        <center>
+            <p style="background-color: rgb(55, 50, 50); color: white; height: 60px; padding-top: 10px; font-size: 25px;">&copy; 2023 JSpiders. All rights reserved.</p>
+        </center>  
+</body>
+</html>

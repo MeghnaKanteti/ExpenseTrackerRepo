@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Expenses Tracker</title>
+<link rel="icon" th:href="@{/images/ExpensesTrackerfavicon.ico}">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+	<div
+		style="height: 68px; width: auto; background-color: rgb(201, 100, 169); font-size: 30px; padding-top: 25px;">
+		<img th:src="@{/images/expensetracker.jpg}" alt="img"
+			style="height: 40px; width: 40px; padding-left: 20px;"> <strong
+			style="padding-left: 30px;">Spring Expenses Tracker</strong> <a
+			th:href="@{/expense/home}" style="text-decoration: none;"> <i
+			class="fa fa-home" style="padding-left: 360px; color: green;"></i>
+		</a> <i class="fa-solid fa-user-gear"
+			style="padding-left: 500px; cursor: pointer;">
+			<ul style="list-style: none; display: none;">
+				<li>Update Profile</li>
+				<li>About Us</li>
+				<li>Contact Us</li>
+				<li>Logout</li>
+			</ul>
+		</i>
+	</div>
+	<br>
+	<br>
+	<br>
+	<center>
+		<h3>Choose any one of the option and click on submit</h3>
+		<div
+			style="height: 400px; width: 800px; background-color: lightblue; border: 3px solid; color: black;">
+			<br>
+			<br>
+
+			<form th:action="@{/filter/{userId} (userId=${session.user.userId})}">
+				<strong style="font-size: 25px;"> Filter Expenses</strong><br>
+				<br>
+				<br> Select Date<br> <input type="date" name="date"
+					placeholder="dd-mm-yyyy"
+					style="width: 600px; height: 30px; padding-left: 10px;"><br>
+				Select Category<br> <input type="text" name="category"
+					list="ctg" style="width: 600px; height: 30px;"><br>
+				<datalist id="ctg">
+					<option>Utilities</option>
+					<option>Transportation</option>
+					<option>Groceries</option>
+					<option>Dining Out</option>
+					<option>HealthCare</option>
+					<option>Entertainment</option>
+					<option>Education</option>
+					<option>Personal Care</option>
+					<option>Clothing</option>
+					<option>Home Maintaince</option>
+					<option>Gifts And Donations</option>
+					<option>Savings & Investments</option>
+					<option>Tax</option>
+					<option>Others</option>
+				</datalist>
+				Select Amount<br> <input type="text" name="range" list="rng"
+					style="width: 600px; height: 30px;" value="0">
+				<datalist id="rng">
+					<option>0-500</option>
+					<option>500-1000</option>
+					<option>1000-1500</option>
+					<option>1500-2000</option>
+					<option>2000-3000</option>
+					<option>3000-4000</option>
+					<option>4000-5000</option>
+					<option>5000-6000</option>
+					<option>6000-7000</option>
+					<option>7000-8000</option>
+					<option>9000-10000</option>
+					
+
+				</datalist>
+				<br>
+				<br> <input type="submit"
+					style="background-color: blue; height: 25px; width: 85px; color: white; border: none;">
+			</form>
+		</div>
+	</center>
+</body>
+</html>

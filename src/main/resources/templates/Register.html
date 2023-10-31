@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Document</title>
+    <link rel="icon" th:href="@{/images/ExpensesTrackerfavicon.ico}">
+</head>
+<body>
+     <div style="height: 68px; width: auto; background-color: rgb(201, 100, 169); font-size: 30px; padding-top: 25px;">
+        <img th:src="@{/images/expensetracker.jpg}" alt="img" style="height: 40px; width: 40px; padding-left: 20px;">
+        <strong style="padding-left: 30px;">Spring Expenses Tracker</strong>
+        </div><br>
+    <center>    
+        <div style="width: 630px; height: 560px;background-color: aquamarine;">
+            <br><br>
+            CREATE ACCOUNT<br><br>
+            <form th:action="@{/registration}" method="post">
+            <input type="text" name="fullName" placeholder="Your Name" style="width: 500px; height: 30px;" ><br><br>
+            <input type="text" name="userName"placeholder="Your Username" style="width: 500px; height: 30px;"><br><br>
+            <input type="text" name="email" placeholder="Your Email" style="width: 500px; height: 30px;"><br><br>
+            <input type="number" name="mobile" placeholder="Your Mobile" style="width: 500px; height: 30px;"><br><br>
+            <input type="password" name="password" placeholder="Password" style="width: 500px; height: 30px;"><br><br>
+            <input type="password" name="repassword" placeholder="Re-Enter your password" style="width: 500px; height: 30px;"><br><br>
+            <input type="submit" placeholder="SIGN UP" style="width: 510px; height: 35px;color: black; border: none; background-color: rgb(92, 92, 219)">
+            <h1 th:text="${msg}"></h1>
+            </form>
+            <br><br><br><br>
+            <p>Have already an account ? <a th:href="@{/expense/login}" style="cursor: pointer;">Login here</a></p>	
+        </div>
+        
+    </center>
+</body>
+</html>

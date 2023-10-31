@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org">
+<head>
+<title>Expenses Tracker</title>
+<link rel="icon" th:href="@{/images/ExpensesTrackerfavicon.ico}">
+
+</head>
+<body>
+	<div
+		style="height: 68px; width: auto; background-color: rgb(201, 100, 169); font-size: 30px; padding-top: 25px;">
+		<img th:src="@{/images/expensetracker.jpg}" alt="img"
+			style="height: 40px; width: 40px; padding-left: 20px;"> <strong
+			style="padding-left: 30px;">Spring Expenses Tracker</strong>
+	</div>
+	<br>
+	<br>
+	<center>
+		<div
+			style="height: 500px; width: 500px; background-color: aquamarine; padding-top: 30px;">
+			<strong style="font-size: 30px;">Sign In With</strong><br>
+			<br>
+			<br> <a th:href="@{/www.facebook.com}" target="_blank"><img
+				th:src="@{/images/facebook.jpg}" style="height: 30px; width: 30px;"></a>
+			<a th:href="@{/www.facebook.com}" target="_blank"
+				style="padding-bottom: 10px; text-decoration: none;">Facebook</a>
+			&nbsp;&nbsp;&nbsp; <a th:href="@{/www.google.com}" target="_blank"><img
+				th:src="@{/images/google.jpg}" style="height: 30px; width: 30px;"></a>
+			<a th:href="@{/www.google.com}" target="_blank"
+				style="text-decoration: none;">Google</a> <br>
+			<br>
+			<form th:action="@{/loginoperation}" method="post">
+				Username<br> <input type="text" name="userName"
+					style="width: 350px; height: 30px; border-radius: 10px; border: none;"><br>
+				<br> Password<br> <input type="password" name="password"
+					style="width: 350px; height: 30px; border-radius: 10px; border: none;"><br>
+				<br> <input type="submit" value="Sign In"
+					style="width: 350px; border-radius: 10px; border: none; height: 35px; 
+					background-color: black; color: white;">
+				<br>
+				<br>
+				<h1 th:text="${msg}"></h1>
+			</form>
+			<p>
+				Not a member? <a th:href="@{/expense/register}"
+					style="cursor: pointer; color: deeppink;">Sign up now</a>
+			</p>
+		</div>
+	</center>
+</body>
+</html>

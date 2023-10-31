@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<title>Expenses Tracker</title>
+	<link rel="icon" th:href="@{/images/ExpensesTrackerfavicon.ico}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+	<div
+		style="height: 730px; background: repeating-linear-gradient(to top left , pink 10%, skyblue 20% , pink 30%, skyblue 40%)">
+		<div
+			style="height: 68px; width: auto; background-color: rgb(201, 100, 169); font-size: 30px; padding-top: 25px;">
+			<img th:src="@{/images/expensetracker.jpg}" alt="img"
+				style="height: 40px; width: 40px; padding-left: 20px;">
+			<strong style="padding-left: 30px;">Spring Expenses Tracker</strong>
+			<a th:href="@{/expense/home}" style="text-decoration: none;">
+				<i class="fa fa-home" style="padding-left: 360px;color: green;"></i>
+			</a>
+			<i class="fa-solid fa-user-gear" style="padding-left: 500px; cursor: pointer;">
+				<ul style="list-style: none; display: none;">
+					<li>Update Profile</li>
+					<li>About Us</li>
+					<li>Contact Us</li>
+					<li>Logout</li>
+				</ul>
+			</i>
+		</div>
+		<div style="height: 620px; width: auto;">
+			<div style="display: flex; padding-top: 100px; width: 1300px;">
+				<img th:src="@{/images/addexpense.jpg}" alt="img"
+					style="padding-left: 150px; height: 300px; width: 350px; ">
+				<div style="padding-left: 400px;">
+
+					<form th:action="@{/addexpenses/{id} (id=${session.user.userId})}" method="post">
+					<center>
+						<strong style="font-size: 20px;">Add Expenses</strong>
+					</center><br><br>
+					<input type="number" placeholder="Amount" name="amount"
+						style="height: 50px;width: 350px; border: none; border-radius:20px;"><br><br>
+					<input type="date" placeholder="dd-mm-yyyy" name="date"
+						style="height: 50px;width: 350px; border: none; border-radius:20px;"><br><br>
+					<input type="text" placeholder="Category" name="category" list="ctg"
+						style="height: 50px;width: 350px; border: none; border-radius:20px;"><br><br>
+						<datalist id="ctg">
+							<option>Utilities</option>
+							<option>Transportation</option>
+							<option>Groceries</option>
+							<option>Dining Out</option>
+							<option>HealthCare</option>
+							<option>Entertainment</option>
+							<option>Education</option>
+							<option>Personal Care</option>
+							<option>Clothing</option>
+							<option>Home Maintenance</option>
+							<option>Gifts And Donations</option>
+							<option>Savings & Investments</option>
+							<option>Tax</option>
+							<option>Others</option>
+						</datalist>
+					<textarea placeholder="Description" name="description"
+						style="height: 50px;width: 350px; border: none; border-radius:20px;"></textarea> <br><br>
+					<center>
+						<input type="submit" value="ADD +"
+							style=" background-color: rgb(44, 241, 44); cursor: pointer; border: none; color: white; height: 30px; border-radius:20px;">
+					</center>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

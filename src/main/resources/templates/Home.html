@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org">
+<head>
+    <title>Expenses Tracker</title>
+    <link rel="icon" th:href="@{/images/ExpensesTrackerfavicon.ico}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+   <div style="height: 68px; width: auto; background-color: rgb(201, 100, 169); font-size: 30px; padding-top: 25px;">
+        <img th:src="@{/images/expensetracker.jpg}" alt="img" style="height: 40px; width: 40px; padding-left: 20px;">
+        <strong style="padding-left: 30px;">Spring Expenses Tracker</strong>
+        <i class="fa-solid fa-user-gear" style="padding-left: 950px; cursor: pointer;">
+        <ul style="list-style: none; display: none;">
+                <li>Update Profile</li>
+                <li>About Us</li>
+                <li>Contact Us</li>
+                <li>Logout</li>
+        </ul>
+        </i>
+    </div>
+
+    <div style=" height: 620px; background: radial-gradient(circle, red 10%, black 80%)" >
+        <div style="font-size: 40px; cursor: pointer; color: white;"> 
+            <i class="fas fa-hand-holding-usd" style="padding-left: 360px; padding-top: 100px;" >
+            </i><i class="fas fa-plus"></i>
+            <i class="fas fa-eye" style="padding-left: 680px; padding-top: 100px;"></i><br>
+            <a th:href="@{/expense/addExpenses}" style="color: white; text-decoration: none;">
+            <i style="padding-left: 280px; padding-top: 100px;">Add Expenses</i>
+            </a>
+            <a th:href="@{/viewexpense/{id} (id=${session.user.userId})}" th:unless="${session==null}"  
+            style="color: white;  text-decoration: none;">
+            <i style="padding-left: 520px; padding-top: 100px;">View Expenses</i><br>
+            </a>
+         	<center style="font-size: 40px; color: yellow; padding-top: 110px;">Welcome 
+			<span th:text="${session.user.fullName}" th:unless="${session == null}" ></span>  
+			 </center>
+            <i class="fa-solid fa-sigma" style=" padding-top:30px; color:white; padding-left: 500px;"></i><br>
+            <i class="fas fa-funnel-dollar" style="padding-left: 1120px; padding-top: 60px;"></i><br>
+            <a th:href="@{/expense/totalExpense}" style="color: white;  text-decoration: none;">
+            <i style=" padding-left: 260px;">Total Expenses</i>
+            </a>
+            <a th:href="@{/expense/filterExpense}" style="color: white;  text-decoration: none;">
+            <i style="padding-left: 520px;">Filter Expenses</i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
